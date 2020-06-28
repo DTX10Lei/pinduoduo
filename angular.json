@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pinduoduo"
+    }
+  },
+  "defaultProject": "pinduoduo",
+  "cli": {
+    "analytics": "5096bb7c-49b8-4c7d-9c00-81dc5f539dd2"
+  }
 }
