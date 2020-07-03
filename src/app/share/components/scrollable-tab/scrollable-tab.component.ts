@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, Input, Output} from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
 export interface TopMenu {
-  title: String;
-  link?: String;
+  title: string;
+  link?: string;
 }
 
 @Component({
@@ -12,23 +12,24 @@ export interface TopMenu {
   styleUrls: ['./scrollable-tab.component.css']
 })
 
-export class ScrollableTabComponent implements OnInit {
+export class ScrollableTabComponent{
   selectedIndex = -1;
   @Input() menus: TopMenu[] = [];
-  @Input() backGroundColor = '#fff';
+  @Input() backGroundColor = '#ccc';
   @Input() titleActiveColor = 'brown';
-  @Input() titleColor = 'blue'; 
+  @Input() titleColor = 'blue';
   @Input() indicatorColor= 'yellow';
 
   @Output() tabSelected = new EventEmitter();
 
-  constructor() { }
+  constructor() {
+    console.log('scrollable-tab component constructor !');
+  }
 
-  ngOnInit(): void {
-  }  
-  
-  handleSelection(index:number){
+
+
+   handleSelection(index: number){
     this.selectedIndex = index;
-    this.tabSelected.emit(this.menus[this.selectedIndex])
+    this.tabSelected.emit(this.menus[this.selectedIndex]);
   }
 }

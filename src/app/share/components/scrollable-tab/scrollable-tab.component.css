@@ -2,6 +2,8 @@ ul{
     padding: 0;
     margin: 0;
     display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     flex-direction: row;
 }
 ul li{
@@ -17,7 +19,7 @@ a{
 }
 .active{
     color: red;
-     
+
 }
 .even{
     color:burlywood;

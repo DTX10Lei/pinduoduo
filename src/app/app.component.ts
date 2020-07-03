@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { TopMenu} from './components'
+import { ImageSliderComponent } from './share/components/image-slider/image-slider.component';
+import { Component, ViewChild } from '@angular/core';
+import { TopMenu} from './share/components';
+import { ImageSlider} from './share/components';
 
 
 @Component({
@@ -10,6 +12,9 @@ import { TopMenu} from './components'
 
 export class AppComponent {
   title = 'pinduoduo';
+  scrollableBackgroundColor = 'red';
+  username = '';
+  @ViewChild('imageSlider') imageSlider: ImageSliderComponent;
   topMenus: TopMenu[] = [
   {
     title: '热门',
@@ -81,8 +86,38 @@ export class AppComponent {
   },
 ]
 
-handleTabSelected(topMenu:TopMenu){
-  console.log(topMenu);
+imageSliders: ImageSlider[] = [
+  {
+    imagUrl: './assets/images/ia_100000003.jpg',
+    link: '',
+    caption: 'recycling society',
+},
+{
+  imagUrl: './assets/images/ia_100000004.jpg',
+  link: '',
+  caption: 'winter time 1',
+},
+{
+  imagUrl: './assets/images/ia_100000005.jpg',
+  link: '',
+  caption: 'winter time 2',
+},
+{
+  imagUrl: './assets/images/ia_100000006.jpg',
+  link: '',
+  caption: 'winter time 3',
 }
-  
+
+]
+
+handleTabSelected(topMenu: TopMenu){
+
+}
+
+ngAfterViewInit(): void {
+  //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+  //Add 'implements AfterViewInit' to the class.
+  console.log(this.imageSlider);
+}
+
 }

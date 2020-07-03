@@ -1,6 +1,9 @@
 <app-scrollable-tab [menus]="topMenus"
- [backGroundColor]="'red'" 
- [titleActiveColor] = "'yellow'"
+ [backGroundColor] =  "scrollableBackgroundColor"
+ titleActiveColor = "yellow"
  titleColor = "#fff"
- indicatorColor = "yellow"
- (tabSelected)="handleTabSelected($event)"></app-scrollable-tab> 
+ indicatorColor = "darkblue"
+ (tabSelected)="handleTabSelected($event)"></app-scrollable-tab>
+
+ <app-image-slider [sliders]="imageSliders" #imageSlider> </app-image-slider>
+ <app-horizontal-grid [(username)] = "username"> </app-horizontal-grid>
